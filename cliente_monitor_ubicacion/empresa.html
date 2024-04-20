@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Ruta - Empres</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="estilo_mapa.css">
+</head>
+
+<body>
+    <h1>Seguimiento de Ruta - Empresa</h1>
+    <div id="map"></div>
+    <button id="iniciarViaje">Iniciar Viaje</button>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([0, 0], 2);
+        let marker;
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const socket = new WebSocket('ws://localhost:3000/familiar');
+
+        socket.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+            mostrarUbicacion(data.latitud, data.longitud);
+        };
+
+        document.getElementById('iniciarViaje').addEventListener('click', function () {
+            socket.send('iniciar_viaje');
+        });
+
+        function mostrarUbicacion(latitud, longitud) {
+            if (marker) {
+                marker.setLatLng([latitud, longitud]);
+            } else {
+                marker = L.marker([latitud, longitud]).addTo(map);
+            }
+            map.setView([latitud, longitud], 13);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Indicadores Físicos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Monitor de Indicadores Físicos</h1>
+    <div id="alertBox" class="alert" style="display:none;">
+        <span class="closebtn" onclick="closeAlert()">&times;</span>
+        <strong>¡Alerta!</strong> <span id="alertMessage"></span>
+    </div>
+    <div id="dataContainer">
+        <p>Últimos datos de indicadores físicos:</p>
+        <p id="heartRate">Frecuencia cardíaca: -</p>
+        <p id="bloodPressure">Presión arterial: -</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
