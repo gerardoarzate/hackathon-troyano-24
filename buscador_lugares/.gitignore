@@ -1,0 +1,23 @@
+# Ignorar archivos de log y caché
+*.log
+*.json
+*.swp
+*.swo
+*.lock
+
+# Ignorar archivos de configuración
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorar archivos compilados y generados
+dist/
+build/
+coverage/
+node_modules/
+
+# Ignorar archivos de dependencias específicos de algunos sistemas
+.DS_Store
+Thumbs.db
