@@ -7,7 +7,7 @@ ws.onopen = function () {
 
 ws.onmessage = function (event) {
     const data = JSON.parse(event.data);
-    console.log("Datos recibidos:", data); // Añadido para depuración
+    console.log("Datos recibidos:", data); 
     updateIndicators(data);
     checkForAnomaly(data);
 };
