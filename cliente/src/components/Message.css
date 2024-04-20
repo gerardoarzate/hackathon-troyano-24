@@ -1,0 +1,13 @@
+.Message {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    margin: auto;
+    width: fit-content;
+    max-width: 70%;
+    border-radius: 16px;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}

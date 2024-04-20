@@ -1,3 +1,7 @@
+:root {
+
+}
+
 *, *::after, *::before {
   padding: 0;
   margin: 0;
@@ -10,6 +14,11 @@ html, body {
 }
 
 body {
-
+  font-size: 16px;
+  font-family: 'Open Sans';
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+}
